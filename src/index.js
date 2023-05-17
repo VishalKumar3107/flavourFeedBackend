@@ -8,6 +8,8 @@ import { userRouter } from "./routes/users.js";
 import { recipesRouter } from "./routes/recipes.js";
 const app = express();
 
+const PORT = process.env.PORT || 5000;
+
 app.use(express.json());
 app.use(cors());
 
@@ -22,4 +24,4 @@ mongoose.connect(
   }
 );
 
-app.listen(5000, () => console.log("SERVER STARTED"));
+app.listen(PORT, () => console.log("SERVER STARTED"));
