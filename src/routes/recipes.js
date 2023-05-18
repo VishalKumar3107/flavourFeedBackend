@@ -132,7 +132,7 @@ router.get("/user/:username", async (req, res) => {
   // delete-recipe
   router.delete('/recipe/:id', async (req, res) => {
     try {
-      const recipe = await Recipe.findByIdAndDelete(req.params.id);
+      const recipe = await RecipeModel.findByIdAndDelete(req.params.id);
       if (!recipe) {
         return res.status(404).send('Recipe not found');
       }
